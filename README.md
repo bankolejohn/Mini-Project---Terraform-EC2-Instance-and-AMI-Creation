@@ -176,9 +176,9 @@ This task involves setting up your Terraform project directory and writing the c
       }
     }
     
-    # Resource: AWS Security Group for SSH Access
-    # This security group allows inbound SSH (port 22) traffic from anywhere.
-    # WARNING: For production environments, restrict cidr_blocks to specific IP ranges.
+    ### Resource: AWS Security Group for SSH Access
+    ### This security group allows inbound SSH (port 22) traffic from anywhere.
+    ### WARNING: For production environments, restrict cidr_blocks to specific IP ranges.
     resource "aws_security_group" "ssh_access" {
       name        = "terraform-ssh-access-sg"
       description = "Allow SSH inbound traffic for Terraform-created instance"
@@ -202,17 +202,17 @@ This task involves setting up your Terraform project directory and writing the c
       }
     }
     
-    # Resource: AWS EC2 Instance
+    // Resource: AWS EC2 Instance
     resource "aws_instance" "my_ec2_spec" {
-      # Use the ID of the latest Ubuntu 20.04 AMI found by the data source
+      // Use the ID of the latest Ubuntu 20.04 AMI found by the data source
       ami           = data.aws_ami.ubuntu_focal_20_04.id
       instance_type = "t3.micro" # Changed from t2.micro to t3.micro for the latest instance type
     
-      # Link to the security group created above
+      // Link to the security group created above
       vpc_security_group_ids = [aws_security_group.ssh_access.id]
     
-      # --- IMPORTANT: Replace "your-key-pair-name" with an actual key pair name in your AWS account ---
-      # You need an SSH key pair to connect to the instance.
+      // --- IMPORTANT: Replace "your-key-pair-name" with an actual key pair name in your AWS account ---
+      // You need an SSH key pair to connect to the instance.
       key_name = "your-key-pair-name"
     
       tags = {
@@ -220,7 +220,7 @@ This task involves setting up your Terraform project directory and writing the c
       }
     }
     
-    # Resource: AWS AMI Creation from the EC2 Instance
+    // Resource: AWS AMI Creation from the EC2 Instance
     resource "aws_ami_from_instance" "my_ec2_spec_ami" {
       name               = "my-ec2-ami-from-terraform" # Updated name to be more distinct
       description        = "My AMI created from my EC2 Instance with Terraform script"
