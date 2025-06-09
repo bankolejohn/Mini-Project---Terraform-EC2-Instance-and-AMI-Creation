@@ -105,7 +105,9 @@ Before diving into Terraform, let's confirm your local environment is ready.
                 "Account": "123456789012",
                 "Arn": "arn:aws:iam::123456789012:user/YourUserName"
             }
-            
+
+            <img width="559" alt="Snipaste_2025-06-09_11-01-53" src="https://github.com/user-attachments/assets/2b4fc957-3278-4de5-b21c-e69749bd17b6" />
+
         
 5.  **Confirm Terraform Installation:**
     
@@ -118,6 +120,9 @@ Before diving into Terraform, let's confirm your local environment is ready.
         
             Terraform v1.x.x
             on <OS>_<Architecture>
+
+<img width="637" alt="Snipaste_2025-06-09_11-34-53" src="https://github.com/user-attachments/assets/37f11d7d-2614-4fc5-a62f-a4a8c72e7b11" />
+
             
         
 
